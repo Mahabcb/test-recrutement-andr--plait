@@ -1,3 +1,23 @@
+/**
+* Code REVIEW 
+* Auteur : Maha Bouchiba
+* 
+* A la premiere lecture j'ai remarqué que les noms de variable
+* n'étaient pas assez explicite. Je pense que ca serait mieux
+* de les renommer en fonction de leur utilité. car cgu cgv c'est
+* pas tres clair je trouve.
+
+* On a 0.55rem 0.55rem #FFFFFF; qui est répété plusieurs fois.
+* Je pense qu'il serait mieux de le mettre dans une variable
+
+
+* On a footer qui se répétent dans le code, je pense qu'il serait
+* mieux de tout regrouper dans un seul footer (comme on est sur du scss)
+*
+
+* Dans le footer, on a des text-shadow qui sont répétés plusieurs fois.
+*/
+
 /* Footer */
 #footer {
   text-shadow: 0.55rem 0.55rem #FFFFFF;

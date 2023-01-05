@@ -11,21 +11,22 @@ declare(strict_types=1);
  * On pourrait rajouter une méthode getTitle pour récupérer le nom du film 
  * Ainsi qu'une méthode setTitle pour modifier le nom du film. ça nous permettrait de retirer le constructeur
  * Si on a une méthode setPricecode et setTittle, on peut retirer le constructeur
- * La fonction setPrice code ne retourne rien : on peut la modifier pour qu'elle retourne self
+ * La fonction setPrice code n'a pas de type de retour : on peut la modifier pour qu'elle retourne self
  * 
  * Si on veut aller plus loin, on pourrait même se poser la question de la responsabilité de cette classe;
  * Est-ce que cette classe devrait être responsable de la logique de calcul du prix d'un film ?
- * On pourrait  refactoriser ce code en utilisant l'héritage et l'agrégation au lieu de constantes pour les différents codes de prix;
- * par ecemple, on pourrait créer une classe abstraite Price qui contient la méthode getCharge et ensuite les classes héritant de Price (ChildrenPrice, RegularPrice, NewReleasePrice)
+ * On pourrait  refactoriser ce code en utilisant l'héritage et l'agrégation au lieu d'utiliser des constantes pour les différents codes de prix;
+ * par exemple, on pourrait créer une classe abstraite Price qui contiendrait une méthode getCharge()
+ * et ensuite les classes héritant de Price (ChildrenPrice, RegularPrice, NewReleasePrice)
  * Ensuite dans cette classe Movie on utilise l'agrégation pour créer une propriété price qui est de type Price
  * 
  * En résumé cette class aurait la propriété titre et la propriété price qui est de type Price
- * et Price est une classe abstraite qui contient la méthode getCharge
- * et les classes ChildrenPrice, RegularPrice, NewReleasePrice héritent de Price
- * (une classe  = une responsabilité = une raison de changer = une raison de tester selon SOLID)
+ * et Price serait une classe abstraite qui contiendrait la méthode getCharge
+ * et les classes ChildrenPrice, RegularPrice, NewReleasePrice hériteraient de Price
+ * une classe  = une responsabilité  (SOLID)
  * 
- * Enfin il faudrait rajouter des tests unitaires pour cette classe
- * 
+ * Enfin il faudrait rajouter des tests unitaires pour cette classe pour s'assurer qu'elle se comporte comme on le veut
+ * (j'ai mis un exemple de ce à quoi ça pourrait ressembler plus bas)
  */
 
 namespace App;

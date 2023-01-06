@@ -18,6 +18,31 @@
 * Dans le footer, on a des text-shadow qui sont répétés plusieurs fois.
 */
 
+// Footer refactorisé (il faudra donc modifier le nom des variable pour qu'elle soient plus explicite)
+
+:root {
+  --footer-text-shadow: 0.55rem 0.55rem #15FFF5;
+}
+
+#footer {
+  text-shadow: 0.55rem 0.55rem #FFFFFF;
+  
+  & .form__footer,
+  & .cgv__footer,
+  & .cgu__footer {
+    margin: 0.5rem;
+    text-shadow: var(--footer-text-shadow);
+  }
+  
+  & .cgv__footer {
+    & .button {
+      padding: 1rem;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+
 /* Footer */
 #footer {
   text-shadow: 0.55rem 0.55rem #FFFFFF;
@@ -43,3 +68,5 @@
   margin: 0.5rem;
   text-shadow: 0.55rem 0.55rem #15FFF5;
 }
+
+
